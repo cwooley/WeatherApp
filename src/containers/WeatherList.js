@@ -40,8 +40,17 @@ class WeatherList extends Component {
   }
 }
 
+//This function gives us access to our store and the state inside of it. We can then decide what we want out of it.
 function mapStateToProps(state){
   return {weather: state.weather}
 }
 
+//Can also write it like this.
+// function mapStateToProps(weather){
+//   return {weather}
+// }
+
+
+//connect takes params and returns a function that we immediately call that takes as an argument our component.
+//We pass in mapStateToProps and I assume that it then passed them into the passed in component as props.
 export default connect(mapStateToProps)(WeatherList)
